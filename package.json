@@ -1,0 +1,17 @@
+{
+  "name": "db-backup-daily",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Daily MongoDB backup for Coolify",
+  "main": "backup.js",
+  "scripts": {
+    "start": "node backup.js",
+    "backup": "node backup.js --once"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1"
+  }
+}
