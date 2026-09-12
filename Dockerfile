@@ -6,7 +6,13 @@ ARG MONGO_TOOLS_VERSION=100.18.0
 WORKDIR /app
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends ca-certificates curl \
+    && apt-get install -y --no-install-recommends \
+        ca-certificates \
+        curl \
+        libgssapi-krb5-2 \
+        libkrb5-3 \
+        libsasl2-2 \
+        libssl3 \
     && if [ "$TARGETARCH" = "arm64" ]; then \
          TOOLS_DIST="ubuntu2204-arm64"; \
        else \
