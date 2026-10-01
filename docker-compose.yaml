@@ -1,6 +1,8 @@
 services:
   backup:
-    build: .
+    build:
+      context: .
+      network: host
     restart: unless-stopped
     environment:
       MONGODB_URI: ${MONGODB_URI:-${MONGO_URL:?}}
