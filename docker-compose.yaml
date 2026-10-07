@@ -14,7 +14,7 @@ services:
       RUN_ON_START: ${RUN_ON_START:-true}
       TZ: ${TZ:-UTC}
     volumes:
-      - /media/ashish/External1/db_backup_daily:/backups
+      - /mnt/external/db_backup_daily:/backups
     healthcheck:
       test: ["CMD", "node", "-e", "require('fs').accessSync('/usr/local/bin/mongodump')"]
       interval: 30s

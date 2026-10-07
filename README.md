@@ -57,10 +57,10 @@ Coolify should already be installed and your laptop added as the destination ser
 3. Set **Build Pack** to **Docker Compose**.
 4. Set **Docker Compose Location** to `/docker-compose.yaml`.
 5. Open **Environment Variables** and add `MONGODB_URI` (secret). Optional: `MONGO_DB`, `TZ=Asia/Kolkata`.
-6. Create the folder on the **same machine that runs Coolify/Docker**: `mkdir -p /media/ashish/External1/db_backup_daily`
+6. Create the folder on the **same machine that runs Coolify/Docker**: `mkdir -p /mnt/external/db_backup_daily`
 7. Deploy (or Redeploy after changing the compose file).
 
-Backups are bind-mounted to `/media/ashish/External1/db_backup_daily` on the Coolify server. That is not this Mac, and `.env` is never sent to Coolify. If Coolify runs on another computer, look on that computer, not in Finder here.
+Backups are bind-mounted to `/mnt/external/db_backup_daily` on the Coolify server. That is not this Mac, and `.env` is never sent to Coolify. If Coolify runs on another computer, look on that computer, not in Finder here.
 
 If MongoDB Atlas rejects the dump, add this laptop's public IP to the Atlas Network Access list.
 
